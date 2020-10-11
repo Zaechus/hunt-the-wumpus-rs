@@ -1,3 +1,7 @@
+use hunt_the_wumpus::Grid;
+
 fn main() {
-    println!("Hello, world!");
+    let grid = Grid::new();
+
+    grid.show_grid();
 }
