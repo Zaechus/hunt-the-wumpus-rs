@@ -1,16 +1,14 @@
-use crate::player::Player;
-
 pub enum Visited {
     Seen,
     Unseen,
 }
 
+#[derive(Copy, Clone)]
 pub enum CellType {
     Empty,
+    Arrow,
     Bats,
     Pit,
-    Player(Player),
-    Wumpus,
 }
 
 pub struct GameCell {
@@ -26,15 +24,13 @@ impl GameCell {
         }
     }
 
+    pub fn celltype(&self) -> CellType {
+        self.celltype
+    }
+
     pub fn symbol(&self) -> char {
         if let Visited::Seen = self.visited {
-            match self.celltype {
-                CellType::Bats => 'B',
-                CellType::Pit => '^',
-                CellType::Player(_) => '@',
-                CellType::Wumpus => 'W',
-                _ => 'O',
-            }
+            'O'
         } else {
             '_'
         }
