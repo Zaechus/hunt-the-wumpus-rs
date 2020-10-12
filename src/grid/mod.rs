@@ -223,7 +223,7 @@ impl Grid {
                 if self.player.borrow().has_arrows() {
                     self.fire_arrow(direction);
                 } else {
-                    println!("You ran out of arrows. The wumpus eats you for lunch. You died");
+                    println!("You ran out of arrows. The wumpus eats you for lunch. You died.");
                     self.player.borrow_mut().die();
                 }
             } else {
