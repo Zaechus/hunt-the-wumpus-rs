@@ -32,7 +32,7 @@ impl Player {
         let new_x = self.pos.0 as i32 + direction.0;
         let new_y = self.pos.1 as i32 + direction.1;
 
-        new_x >= 0 && new_x <= 5 && new_y >= 0 && new_y <= 5
+        (0..=4).contains(&new_x) && (0..=4).contains(&new_y)
     }
 
     pub fn move_self(&mut self, direction: (i32, i32)) {
@@ -44,7 +44,7 @@ impl Player {
 
     pub fn move_rand(&mut self) {
         let mut rng = thread_rng();
-        self.pos = (rng.gen_range(0, 5), rng.gen_range(0, 5));
+        self.pos = (rng.gen_range(0..5), rng.gen_range(0..5));
     }
 
     pub fn fire(&mut self) {

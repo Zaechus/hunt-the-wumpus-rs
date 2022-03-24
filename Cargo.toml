@@ -1,14 +1,13 @@
 [package]
 name = "hunt-the-wumpus"
 description = "A text-based game where you try to slay a wumpus."
-version = "0.1.0"
-authors = ["Maxwell Anderson <maxwell.brayden.anderson@gmail.com>"]
-edition = "2018"
+version = "0.2.0"
+authors = ["Maxwell Anderson <maxwell.anderson.public@protonmail.com>"]
+edition = "2021"
 license = "MIT"
-readme = "README.md"
 repository = "https://github.com/Maxgy/hunt-the-wumpus-rs"
 keywords = ["text", "game"]
 categories = ["games", "game-engines"]
 
 [dependencies]
-rand = "0.7"
+rand = "0.8"

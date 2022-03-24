@@ -16,7 +16,7 @@ impl Wumpus {
     pub fn move_random(&mut self) {
         let mut rng = thread_rng();
 
-        self.pos = (rng.gen_range(0, 5), rng.gen_range(0, 5));
+        self.pos = (rng.gen_range(0..5), rng.gen_range(0..5));
     }
 
     pub fn pos(&self) -> (usize, usize) {

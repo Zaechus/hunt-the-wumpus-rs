@@ -45,8 +45,8 @@ impl Grid {
         }
 
         loop {
-            let row = rng.gen_range(0, 5);
-            let col = rng.gen_range(0, 5);
+            let row = rng.gen_range(0..5);
+            let col = rng.gen_range(0..5);
 
             if let CellType::Empty = cells[row][col].celltype() {
                 cells[row][col] = GameCell::new(CellType::Arrow);
@@ -54,8 +54,8 @@ impl Grid {
             }
         }
         loop {
-            let row = rng.gen_range(0, 5);
-            let col = rng.gen_range(0, 5);
+            let row = rng.gen_range(0..5);
+            let col = rng.gen_range(0..5);
 
             if let CellType::Empty = cells[row][col].celltype() {
                 cells[row][col] = GameCell::new(CellType::Bats);
@@ -63,8 +63,8 @@ impl Grid {
             }
         }
         loop {
-            let row = rng.gen_range(0, 5);
-            let col = rng.gen_range(0, 5);
+            let row = rng.gen_range(0..5);
+            let col = rng.gen_range(0..5);
 
             if let CellType::Empty = cells[row][col].celltype() {
                 cells[row][col] = GameCell::new(CellType::Pit);
@@ -74,8 +74,8 @@ impl Grid {
         let mut player = Player::new((0, 0));
         let mut wumpus = Wumpus::new((0, 0));
         loop {
-            player.set_pos((rng.gen_range(0, 5), rng.gen_range(0, 5)));
-            wumpus.set_pos((rng.gen_range(0, 5), rng.gen_range(0, 5)));
+            player.set_pos((rng.gen_range(0..5), rng.gen_range(0..5)));
+            wumpus.set_pos((rng.gen_range(0..5), rng.gen_range(0..5)));
 
             if player.pos() != wumpus.pos() {
                 break;
